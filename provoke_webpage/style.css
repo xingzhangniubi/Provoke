@@ -1,0 +1,67 @@
+/* 1. 引入自定义字体（示例名称 & 路径，可根据实际情况修改） */
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('MyCustomFont.woff2') format('woff2'),
+         url('MyCustomFont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  /* Reset some default browser styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Black background, white text, simple font */
+  body {
+    background-color: #000;
+    color: #fff;
+    /* 在这里替换成你的自定义字体名字，如果找不到就用 Georgia 作为后备 */
+    font-family: 'MyCustomFont', 'Georgia', serif;
+    line-height: 1.6;
+    padding: 20px;
+  }
+  
+  /* Main title on the right side */
+  #mainTitle {
+    font-size: 2.5em;
+    text-align: right;
+    font-weight: 900;
+    margin-bottom: 20px;
+  }
+  
+  /* Paragraphs with max width for better reading */
+  .intro {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    max-width: 900px;
+  }
+  
+  /* Center the image */
+  .imageSection {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  /* Set a fixed width, or use max-width for responsive images */
+  #provokeImage {
+    width: 200px;
+    margin-top: 20px;
+  }
+  
+  /* Responsive adjustments for small screens */
+  @media (max-width: 600px) {
+    #mainTitle {
+      font-size: 1.8em;
+    }
+    .intro {
+      font-size: 1em;
+    }
+    #provokeImage {
+      width: 60%;
+      height: auto;
+    }
+  }

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Provoke Moment</title>
+  <style>
+    @font-face {
+      font-family: 'ABCMonumentGroteskBlack';
+      src: url('ABCMonumentGrotesk-Black-Trial.otf') format('opentype');
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: Georgia, serif;
+      background: #000;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    #headerBar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      text-align: center;
+      padding: 20px;
+      mix-blend-mode: difference;
+      pointer-events: none;
+    }
+
+    #mainTitle {
+      font-family: 'ABCMonumentGroteskBlack', sans-serif;
+      font-size: 1.7em;
+      color: #fff;
+      margin: 0;
+    }
+
+    section {
+      min-height: 100vh;
+      width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 100px 60px;
+    }
+
+    .text-block {
+      font-size: 1.7em;
+      line-height: 1.4;
+      text-align: justify;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .red {
+      background: rgb(243, 55, 55);
+      color: #000;
+    }
+
+    .white {
+      background: #fff;
+      color: #000;
+    }
+
+    .black {
+      background: #000;
+      color: #fff;
+    }
+
+    .fullscreen-img {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div id="headerBar">
+    <h1 id="mainTitle">The Provoke Moment</h1>
+  </div>
+
+  <section class="black" style="margin: 0; padding: 0; height: 100vh; position: relative;">
+  <video autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+      <source src="provoke-video.mp4" type="video/mp4">
+    </video>
+  </div>
+</section>
+
+  <section class="red">
+    <div class="text-block">
+      <p>Provoke, launched in 1968, cannot be abstracted from the time and place that produced it: postwar Japan, where rapid modernization masked deep political disillusionment, linguistic collapse, and a visual order in free fall. The crisis was not theoretical—it was existential. For the artists involved, the only way to speak was to rupture the image itself.</p>
+      <p>Today, we are facing another kind of image crisis—one that looks similar on the surface, but feels fundamentally different. Our problem isn’t that images say too little, but that they say too much. In an environment shaped by AI generation, aesthetic automation, and templated communication, images have become hyper-articulate and yet profoundly hollow.</p>
+      <p>Faced with the failure of image to carry meaning, some chose to rupture it; others, to refuse the image altogether. These works won’t tell us what to do now. But they do remind us that the breakdown of visual language is not a one-time historical rupture—it’s cyclical.</p>
+    </div>
+  </section>
+
+  <section>
+    <img src="Moriyama_136.jpg" alt="Fullscreen Image" style="width: 100vw; height: 100vh; object-fit: cover; display: block;" />
+  </section>
+
+  <section class="white">
+    <div class="text-block">
+      <p><em>Provoke</em> was founded in Tokyo in 1968 by Daido Moriyama, Takuma Nakahira, Takahiko Okada, Yutaka Takanashi, and Koji Taki. The magazine examined Japan’s socio-political situation with a radically inventive style.</p>
+      <p>Director of the Japanese Photography Project, Tsuyoshi Ito spoke with Simon Baker, Senior Curator of Photography and International Art at London’s Tate Modern, about the legacy of the storied publication.</p>
+    </div>
+  </section>
+
+  <section class="white">
+    <div class="text-block">
+      <p><strong>Simon Baker:</strong> Often when people think of <em>Provoke</em>, they think of the magazine. They think of quite blurry, grainy shots of street-level photography. But actually it’s varied, and there are many different approaches even within one photographer’s work.</p>
+      <p>If there is a unifying characteristic, it is an openness to chance, to experimentation, and to a radically different kind of photographic image—whether more like a screen print or a film still, an abstract painting, or however else we might think of it.</p>
+    </div>
+  </section>
+
+  <section>
+    <img src="50 years since PROVOKE reprinting the radical Japanese photo magazine.jpg" alt="Fullscreen Image" class="fullscreen-img" />
+  </section>
+
+  <section class="black">
+    <div class="text-block">
+      <p><strong>Ito:</strong> Is there a particular image that you can think of, let’s say, of Daido Moriyama’s, that you have in mind?</p>
+      <p><strong>Baker:</strong> Nakahira’s photobook <em>For a Language to Come</em> (1970) defined <em>Provoke</em>. Even the title suggests that there’s a new visual language that’s available. Nakahira is a great writer, somebody who’s interested in theory, and writing, and thinking about people like Walter Benjamin and Eugène Atget as well as previous generations of photography theorists.</p>
+      <p>What marks out <em>Provoke</em> as avant-garde in the full sense is an attempt not only to make images, but to give a sense of the perspective from which the person making the images is seeing the world. It’s not photography as an objective, descriptive medium. It’s photography as an expressive, subjective, and quite radical medium.</p>
+    </div>
+  </section>
+<!-- Page 7: Fullscreen Image with Scroll Animation -->
+<div class="page" style="padding: 0; background: #000;">
+  <img id="animatedImage" src="Takuma-Nakahira_04.jpg" alt="Fullscreen Image" style="width: 100vw; height: 100vh; object-fit: cover; display: block; opacity: 0; transform: scale(1.05); transition: all 1s ease;" />
+</div>
+
+<script>
+  const animatedImage = document.getElementById('animatedImage');
+  const imageObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animatedImage.style.opacity = 1;
+        animatedImage.style.transform = 'scale(1)';
+      }
+    });
+  }, { threshold: 0.3 });
+
+  imageObserver.observe(animatedImage);
+</script>
+<!-- Page 7: Interview – Moriyama & Experience -->
+<section class="page" style="background: #000; color: #fff;">
+  <div class="text-block">
+    <p><strong>Ito:</strong> Is there a particular image that you can think of, let’s say, of Daido Moriyama’s, that you have in mind?</p>
+    <p><strong>Baker:</strong> Nakahira’s photobook <em>For a Language to Come</em> (1970) defined Provoke. Even the title suggests that there’s a new visual language that’s available... It’s photography as an expressive, subjective, and quite radical medium.</p>
+  </div>
+</section>
+
+<!-- Page 8: Interview – Social Context in Japan -->
+<section class="page" style="background: #fff; color: #000;">
+  <div class="text-block">
+    <p><strong>Ito:</strong> Can you put the Provoke photographers’ work in the context of what was happening in Japan at the time?</p>
+    <p><strong>Baker:</strong> Well, the photographers associated with Provoke have very different politics... the Provoke moment encompasses all of those different aspects.</p>
+  </div>
+</section>
+
+<!-- Page 9: Interview – International Comparison -->
+<section class="page" style="background: #ff3434; color: #000;">
+  <div class="text-block">
+    <p><strong>Ito:</strong> Can you relate their movement to what was happening in other parts of the world?</p>
+    <p><strong>Baker:</strong> The global political upheavals around 1968 were happening in Europe and America... It’s made by Japanese publishers and it keys into a kind of cause célèbre on the Left in Europe, in America, and indeed in Africa and the Caribbean.</p>
+  </div>
+</section>
+
+<!-- Page 10: Interview – Influence & Legacy -->
+<section class="page" style="background: #000; color: #fff;">
+  <div class="text-block">
+    <p><strong>Ito:</strong> What kind of influence did Provoke have on photography inside and outside of Japan?</p>
+    <p><strong>Baker:</strong> Soon after the Provoke moment, there were exhibitions of Japanese photography outside Japan... Even with the most famous photographers, like Nobuyoshi Araki—we, outside Japan, know relatively little of what he was actually doing in relation to publishing...</p>
+  </div>
+</section>
+<script>
+  // Scroll-triggered fade-in effect for all paragraph text
+  const allParagraphs = document.querySelectorAll('.text-block p');
+  const textObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = 1;
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.15 });
+
+  allParagraphs.forEach(p => {
+    p.style.opacity = 0;
+    p.style.transform = 'translateY(40px)';
+    p.style.transition = 'all 0.6s ease';
+    textObserver.observe(p);
+  });
+</script>
+<!-- Inserted Break Page with Big Heading -->
+<section class="page" style="background: #fff; display: flex; justify-content: center; align-items: center; height: 100vh;">
+  <h2 style="font-family: 'ABCMonumentGroteskBlack'; font-size: 4em; color: #000000; text-align: center; max-width: 80%;">How Do We Experience the World?</h2>
+</section>
+
+<!-- Reveal Image with Scroll Animation -->
+<section class="page" style="background: #000; padding: 0;">
+  <div style="position: relative; width: 100vw; height: 100vh; overflow: hidden;">
+    <img src="Yutaka Takanashi, Towards the City (including a short history of the “.jpg" alt="Image Reveal" style="width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: translateY(50px); transition: all 1.2s ease;" id="revealImage">
+  </div>
+</section>
+
+<script>
+  const revealImage = document.getElementById('revealImage');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        revealImage.style.opacity = 1;
+        revealImage.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.3 });
+  if (revealImage) revealObserver.observe(revealImage);
+</script>
+
+<style>
+.tooltip {
+  position: relative;
+  cursor: help;
+  border-bottom: 1px dotted #999;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: 220px;
+  background-color: #000;
+  color: #fff;
+  text-align: left;
+  padding: 8px;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 10;
+  top: 120%;
+  left: 0;
+  font-size: 0.9em;
+  line-height: 1.3;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+</style>
+</body>
+</html>
